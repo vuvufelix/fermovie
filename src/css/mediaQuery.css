@@ -1,0 +1,102 @@
+@media screen and (max-width: 600px) {
+
+    #header-container {
+        display: block;
+        text-align: center;
+        background-color: #1d1a1a;
+    }
+
+    #header-container #pesquisa {
+        position: relative;
+        bottom: -1.8125rem;
+        left: -1.25rem;
+    }
+
+    #header-container #foto {
+        width: 2.3125rem;
+        height: 2.3125rem;
+    }
+
+    #header-container h1 {
+        text-align: center;
+        font-size: 1.5625rem;
+        position: relative;
+        top: 1.25rem;
+    }
+
+    #header-container nav {
+        display: none;
+    }
+
+    #header-container button#signup {
+        display: none;
+    }
+
+    #navbar-mobile {
+        display: none;
+    }
+
+    @keyframes scale {
+        0% {
+            transform: scale(1)
+        }
+        50% {
+            transform: scale(1.1)
+        }
+        100% {
+            transform: scale(1);
+        }
+    }
+
+    #navbar-mobile #lista-container {
+        list-style: none;
+    }
+
+    #navbar-mobile #lista-container li {
+        margin: 0.75rem 0;
+    }
+
+    #navbar-mobile #lista-container li:hover {
+        animation: scale .4s ease-in-out;
+    }
+
+    #navbar-mobile #lista-container li a {
+        color: #ffffff;
+        text-decoration: none;
+    }
+
+    #signup-mobile {
+        width: 90%;
+    }
+
+    #btn-remove {
+        display: block;
+        position: relative;
+        right: -31.25rem;
+        top: -1.75rem;
+    }
+}
+
+@media screen and (max-width: 430px) {
+    #header-container h1 {
+        text-align: center;
+        font-size: 1.25rem;
+    }
+
+    #btn-remove {
+        right: -20.3125rem;
+        top: -2.1875rem;
+    }
+
+    #header-container #pesquisa {
+        position: relative;
+        top: 1.875rem;
+        left: -0.3125rem;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    #btn-remove {
+        right: -18.75rem;
+    }
+}

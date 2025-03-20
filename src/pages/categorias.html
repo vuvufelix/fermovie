@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Categorias</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css" media="all">
+    <link rel="stylesheet" href="../css/mediaQuery.css">
+    <link rel="stylesheet" href="../css/projeWelcome.css">
+    <link rel="stylesheet" href="../css/footerWelcome.css">
+    <link rel="stylesheet" href="../css/homeOrg.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <script src="../js/script.js" defer></script>
+</head>
+<body onresize="moveMenu()">
+    <header id="header-container">
+        <h1><span>Fer</span>movie</h1>
+        <nav>
+            <ul id="list-container">
+                <li><a href="home.html" target="_parent">Home</a></li>
+                <li><a href="favoritos.html" target="_parent">Favoritos</a></li>
+                <li><a href="categorias.html" target="_self">Categorias</a></li>
+                <li><a href="perfil.html" target="_parent">Perfil</a></li>
+            </ul>
+        </nav>
+
+        <div id="pesquisa">
+            <input type="text" name="buscar" id="buscar" placeholder="Buscar filme">
+            <button id="buscarDados" onclick="pesquisa()"><i class="fa-solid fa-magnifying-glass"></i></button>
+        </div>
+
+        <a href="perfil.html" target="_parent" id="foto">
+            <img src="../img/687837.jpg" alt="foto de perfil">
+        </a>
+
+        <div id="btn-remove">
+            <span class="linha"></span>
+            <span class="linha"></span>
+            <span class="linha"></span>
+        </div>
+
+        <div id="navbar-mobile">
+            <ul id="lista-container">
+                <li><a href="home.html" target="_parent">Home</a></li>
+                <li><a href="favoritos.html" target="_parent">Favoritos</a></li>
+                <li><a href="categorias.html" target="_self">Categorias</a></li>
+                <li><a href="perfil.html" target="_parent">Perfil</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main>
+        <h2>
+            <strong>Gênero de filmes: </strong>
+            <span>Romance</span>
+        </h2>
+        <div id="films-container">
+           
+        </div>
+    </main>
+    <footer>
+        <div id="socials">
+            <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="#"><i class="fa-brands fa-github"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+        </div>
+        <div id="text">
+            <div>&copy; 2025 - vuvufelix</div>
+            <div>Dados pegos do site <a href="#">Themoviedb.org</a></div>
+        </div>
+    </footer>
+    <script src="../js/farebase.js" type="module"></script>
+</body>
+</html>

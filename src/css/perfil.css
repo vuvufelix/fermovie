@@ -1,0 +1,171 @@
+main {
+    display: flex;
+    gap: 20px;
+    width: 90%;
+    margin: auto;
+    padding: 50px 0 20px 12px;
+    justify-content: space-between;
+}
+
+main #identidade {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    max-width: 250px;
+}
+
+main #identidade button, input[type='file'] {
+    width: 100%;
+    height: 35px;
+    padding: 6px 15px;
+    background-color: #ee150e;
+    color: #ffffff;
+    text-align: center;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    margin-top: 15px;
+    transition: .4s;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+main #identidade button:hover, input[type='file']:hover {
+    border: 1px solid #ee150e;
+    color: #ee150e;
+    background-color: #00000086;
+}
+
+main #identidade #minha img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+main #informacoes {
+    width: 800px;
+}
+
+main #informacoes #like {
+    margin-bottom: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    width: 800px;
+}
+
+main #informacoes #like h2 {
+    font-size: 20px;
+    margin-bottom: 12px;
+}
+
+main #informacoes #like .film {
+    width: 300px;
+    height: 150px;
+}
+
+main #informacoes #like .film img {
+    width: 100%;
+    height: 100%;
+    transition: .4s;
+}
+
+main #informacoes #like .film img:hover {
+    transform: scale(1.04);
+}
+
+main #informacoes #like h3 {
+    font-weight: 200;
+    font-size: 12px;
+    margin: 8px 0 0 0;
+}
+
+main #informacoes #like #ava {
+    font-size: 12px;
+    margin-bottom: 10px;
+}
+
+main #informacoes #like a {
+    border: 1px solid #ee150e;
+    padding: 6px 10px;
+    text-align: center;
+    background-color: #000000;
+
+    color: #ee150e;
+    text-decoration: none;
+    font-size: 12px;
+    transition: .4s;
+}
+
+main #informacoes #like a:hover {
+    background-color: #ee150e;
+    color: #000000;
+    border: 1px solid #000000;
+}
+
+main #informacoes #like #ava i {
+    color: #ee150e;
+}
+
+main #informacoes #like .film-container {
+    margin: 10px 10px 10px 0;
+}
+
+main #logim1 {
+    display: none;
+    flex-direction: column;
+    background-color: #424242;
+    align-items: center;
+    justify-content: center;
+    width: 350px;
+    padding: 10px;
+}
+
+main #logim1 #form-login .campos {
+    margin-bottom: 18px;
+    width: 100%;
+}
+
+main #logim1 #form-login .campos label {
+    font-size: 12px;
+}
+
+main #logim1 #form-login .campos input {
+    width: 100%;
+    border: none;
+    text-indent: 10px;
+    height: 30px;
+    outline: none;
+    margin-top: 5px;
+    border-radius: 5px;
+    color: black;
+}
+
+main #logim1 #form-login .campos input#password:focus {
+    background-color: #f058528c;
+    border: 1px solid #ee150e;
+}
+
+main #logim1 #form-login .campos input#email:focus {
+    background-color: #f058528c;
+    border: 1px solid #ee150e;
+}
+
+main #logim1 #form-login .campos1 input {
+    width: 100%;
+    border: none;
+    height: 30px;
+    outline: none;
+    margin-top: 5px;
+    color: #ffffff;
+    background-color: #ee150e;
+    border-radius: 5px;
+    transition: .4s;
+    cursor: pointer;
+    margin-bottom: 8px;
+}
+
+main #logim1 #form-login .campos1 input:hover {
+    background-color: #a10e09;
+    color: #9e9d9d;
+}

@@ -1,0 +1,5 @@
+@media screen and (max-width: 600px) {
+    #img-background {
+        top: -5rem;
+    }
+}

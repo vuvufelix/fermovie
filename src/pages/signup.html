@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>signup</title>
+    <link rel="stylesheet" href="../css/style.css" media="all">
+    <link rel="stylesheet" href="../css/sigin_end_signup.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <script src="../js/script.js" defer></script>
+</head>
+<body>
+    <div id="login-app">
+        <header id="header-container">
+            <h1><span>Fer</span>movie</h1>
+        </header>
+        <main>
+            <div id="app-container">
+                <section id="outras_contas">
+                    <h3>Crie usando:</h3>
+                    <hr>
+                    <div id="conta">
+                        <a href=""><img src="../img/icons8-google-logo-48.png" alt="google"></a>
+                        <a href=""><img src="../img/icons8-facebook-novo-48.png" alt="facebook"></a>
+                    </div>
+                </section>
+                <section id="login">
+                    <h3>Criar conta</h3>
+                    <form id="form-login">
+                        <div class="campos">
+                            <label for="email">Email</label>
+                            <input type="email" name="email" id="email" required autocomplete="on" placeholder="Digite um Email">
+                        </div>
+                        <div class="campos">
+                            <label for="password">Senha</label>
+                            <input type="password" name="password" id="password" required autocomplete="on" minlength="6" placeholder="Crie uma Senha">
+                        </div>
+                        <div class="campos1">
+                            <input type="submit" value="Criar Conta" id="entrar">
+                        </div>
+                    </form>
+                    <a href="login.html" target="_parent">sigin</a>
+                </section>
+            </div>
+        </main>
+    </div>
+    <script type="module">
+        const formContainer = document.querySelector('#form-login');
+        const newEmail = document.querySelector('#email');
+        const newPassword = document.querySelector('#password');
+    
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-analytics.js";
+        import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-auth.js";
+        import { getFirestore, collection, setDoc, doc } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-firestore.js";
+    
+        const firebaseConfig = {
+            apiKey: "AIzaSyBNCx9k4SCSuobPSiuwQBHYM0m6CXMxHCo",
+            authDomain: "fermovie-e8253.firebaseapp.com",
+            databaseURL: "https://fermovie-e8253-default-rtdb.firebaseio.com",
+            projectId: "fermovie-e8253",
+            storageBucket: "fermovie-e8253.firebasestorage.app",
+            messagingSenderId: "678918509221",
+            appId: "1:678918509221:web:ece423957f62a63627b34c",
+            measurementId: "G-VEYHETJLWD"
+        };
+    
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+        const auth = getAuth(app);
+        const db = getFirestore(app);
+    
+        formContainer.addEventListener('submit', (event) => {
+            event.preventDefault();
+            const email = newEmail.value;
+            const password = newPassword.value;
+    
+            createUserWithEmailAndPassword(auth, email, password)
+                .then((userCredential) => {
+                    const user = userCredential.user;
+                    console.log("Usuário cadastrado:", user);
+    
+                    setDoc(doc(collection(db, "usuarios"), user.uid), {
+                        email: user.email,
+                        password: user.password
+                        // Adicione outros dados do usuário aqui
+                    })
+                    .then(() => {
+                        console.log("Documento do usuário criado no Firestore");
+                        // Redirecione ou exiba uma mensagem de sucesso
+                    })
+                    .catch((error) => {
+                        console.error("Erro ao criar documento no Firestore:", error);
+                        // Lide com o erro adequadamente
+                    });
+    
+                })
+                .catch((error) => {
+                    const errorCode = error.code;
+                    const errorMessage = error.message;
+                    console.error("Erro no cadastro:", errorCode, errorMessage);
+                    // Exiba uma mensagem de erro para o usuário
+                });
+        });
+    </script>
+    <script src="../js/cadastro.js"></script>
+</body>
+</html>

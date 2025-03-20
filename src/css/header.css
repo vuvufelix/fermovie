@@ -1,0 +1,43 @@
+#img-background {
+    width: 100%;
+    height: 28.125rem;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    position: relative;
+    top: -4.46875rem;
+}
+
+#img-background #datails-container {
+    margin-left: 3.125rem;
+}
+
+#img-background #datails-container h2 {
+    margin-bottom: 0.75rem;
+}
+
+#img-background .btn {
+    color: #ee150e;
+    padding: 0.375rem 1.25rem;
+    border: 0.125rem solid #ee150e;
+    background-color: transparent;
+    margin: 0.625rem 0.625rem 0.625rem 0;
+    transition: background-color .4s ease;
+    font-weight: bold;
+    cursor: pointer;
+    text-align: center;
+    font-size: 0.875rem;
+    text-decoration: none;
+}
+
+#img-background .btn a {
+    color: #ee150e;
+    text-decoration: none;
+}
+
+
+#img-background .btn:hover {
+    background-color: #0000004f;
+}

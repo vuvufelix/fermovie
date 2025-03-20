@@ -1,0 +1,80 @@
+@media screen and (max-width: 600px) {
+    main {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    main #identidade {
+        max-width: 150px;
+    }
+
+    main #identidade button, input[type='file'] {
+        padding: 5px 15px;
+    }
+
+    main #identidade #minha img {
+        width: 150px;
+        height: 150px;
+        margin-bottom: 20px;
+    }
+
+    main #informacoes {
+        width: 450px;
+    }
+
+    main #informacoes #like {
+        width: 450px;
+    }
+
+    main #informacoes #like h2 {
+        font-size: 18px;
+    }
+
+    main #informacoes #like .film {
+        width: 200px;
+        height: 75px;
+    }
+
+    main #informacoes #like #ava i {
+        color: #ee150e;
+        font-size: 8px;
+    }
+
+    main #informacoes #like #ava span {
+        font-size: 8px;
+    }
+
+    /*=========*/
+    main #logim1 {
+        
+        width: 100%;
+        padding: 10px;
+    }
+}
+
+@media screen and (max-width: 430px) {
+
+    main #identidade #minha img {
+        width: 100px;
+        height: 100px;
+        margin-bottom: 20px;
+    }
+
+    main #informacoes {
+        width: 350px;
+    }
+
+    main #informacoes #like {
+        width: 350px;
+    }
+
+    main #informacoes #like .film {
+        width: 150px;
+        height: 75px;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    
+}

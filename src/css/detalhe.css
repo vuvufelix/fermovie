@@ -1,0 +1,51 @@
+
+#details-container {
+   width: 80%;
+   margin: auto;
+}
+
+#details-container #img img {
+    width: 100%;
+    height: 31.25rem;
+}
+
+#details-container #p {
+    text-align: center;
+}
+
+#details-container #p h2 {
+    margin: 20px 0 10px 0;
+}
+
+#details-container #p span {
+    display: block;
+    margin-bottom: 0.625rem;
+}
+
+#details-container #info-details {
+    margin-top: 1.25rem;
+}
+
+#details-container #info-details div .fa-solid {
+    color: #ee150e;
+    font-size: 1.125rem;
+}
+
+#details-container #info-details strong {
+    font-size: 1.25rem;
+}
+
+#details-container #info-details span {
+    margin: 0.625rem 0 1.875rem 0;
+    font-weight: 100;
+}
+
+#details-container #info-details p {
+    text-align: justify;
+    font-weight: 100;
+}
+
+#details-container #p .fa-star {
+    color: #ee150e;
+    font-size: 1.125rem;
+}
