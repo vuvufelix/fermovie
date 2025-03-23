@@ -133,6 +133,34 @@ main {
     width: 0%;
 }
 
+.dropdown {
+    display: none;
+}
+
+#header-container nav  #list-container li:hover .dropdown {
+    display: block;
+    position: absolute;
+    background-color: #0e0c0c;
+    margin-left: -2.375rem;
+    padding: 0.625rem;
+}
+
+#header-container nav  #list-container li:hover .dropdown a {
+    display: block;
+    margin-top: 0.625rem;
+    width: 9.375rem;
+    text-align: center;
+    border-radius: 0.3125rem;
+    transition: .7s;
+    margin: 0.625rem 0 0.625rem 0;
+    padding: 0.3125rem;
+    font-size: 0.8125rem;
+}
+
+#header-container nav  #list-container li:hover .dropdown a:hover {
+    background-color: #1d1a1a;
+}
+
 #header-container nav  #list-container li:hover::after {
     width: 100%;
 }
