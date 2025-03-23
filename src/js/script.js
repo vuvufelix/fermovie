@@ -3,6 +3,7 @@ const navBarMobile = document.querySelector('#navbar-mobile')
 const headerContainer = document.querySelector('#header-container')
 
 const films_container = document.querySelector('#films-container')
+const resultado_container = document.querySelector('#resultado-container')
 
 const img_background = document.querySelector('#img-background')
 const title = document.querySelector('#title')
@@ -16,7 +17,13 @@ const classificacao_do_filme = document.querySelector('#classificacao')
 const nome_do_filme = document.querySelector('#nome')
 
 const btn_details = document.querySelector('#btn-details')
+const btn_assitir = document.querySelector('#btn-watch')
 const buscarDados = document.querySelector('#buscarDados')
+
+const resposta = document.querySelector('#resposta')
+const pesquisar = document.querySelector('#pesquisa')
+
+const assistir_filme = document.querySelector('#asssitir')
 
 // GET id from URL
 const urlSearchParams = new URLSearchParams(window.location.search)
@@ -156,6 +163,7 @@ async function buscarFilme(filme) {
          const titulo = document.createElement('h3');
          titulo.classList.add('meu_h')
          titulo.textContent = filme.title;
+         resposta.innerHTML = `Resultado de: <span style="color: #ee150e;">${filme.title}</span>`
 
          const poster = document.createElement('img');
          poster.classList.add('poster')
@@ -170,7 +178,7 @@ async function buscarFilme(filme) {
          ava.appendChild(span_heart)
          filmeItem.appendChild(ava)
          filmeItem.appendChild(link_btn)
-         films_container.appendChild(filmeItem);
+         resultado_container.appendChild(filmeItem);
 
          console.log(filme)
 
@@ -196,6 +204,7 @@ async function FilmName(id) {
    img_background.style.backgroundImage =`linear-gradient(rgba(0, 0, 0, 0.767), rgba(0, 0, 0, 0.733)), url(https://image.tmdb.org/t/p/w500${data.poster_path})`
    title.textContent = data.title
    btn_details.setAttribute('href', `detalhes.html?id=${data.id}`)
+   btn_assitir.setAttribute('href', `assistir.html?id=${data.id}`)
 
    getMovies()
 
@@ -225,11 +234,37 @@ async function detalhes_do_filme(id) {
 
 }
 
-function pesquisa() {
+async function assistir(filme) {
 
-   const buscar = document.querySelector('#buscar').value
+   try {
+      
+      const url = `https://api.themoviedb.org/3/movie/${filme}/videos?api_key=${api_key}`
 
-   return buscarFilme(buscar)
+      const res = await fetch(url)
+
+      const data = await res.json()
+
+      const trailers = data.results.filter(video => video.type === 'Trailer')
+
+   if(trailers.length > 0) {
+
+      const video_key = trailers[0].key
+      const iframe = document.createElement('iframe')
+      iframe.src = `https://www.youtube.com/embed/${video_key}`
+
+      assistir_filme.appendChild(iframe)
+
+      btn_assitir.setAttribute('href', `assistir.html?id=${data.id}`)
+
+   } else {
+      console.log('Nenhum trailer encontrado.')
+   }
+
+   } catch (error) {
+      
+      console.log(`Houve um erro em: ${error}`)
+
+   }
 
 }
 
@@ -240,11 +275,40 @@ if(!filmId) {
 } else {
 
    FilmName(filmId)
+   assistir(filmId)
    detalhes_do_filme(filmId)
 
 }
 
-pesquisa()
+pesquisar.addEventListener('submit', (e) => {
+
+   e.preventDefault()
+
+   const buscar = document.querySelector('#buscar').value
+
+   if(buscar !== '') {
+      films_container.style.display = 'none'
+   }
+   
+   return buscarFilme(buscar)
+
+})
+
+pesquisar.addEventListener('keyup', (e) => {
+
+   if(e.key === 'Enter') {
+
+      const buscar = document.querySelector('#buscar').value
+
+      if(buscar !== '') {
+         films_container.style.display = 'none'
+      }
+   
+      return buscarFilme(buscar)
+
+   }
+
+})
 
 /*
 

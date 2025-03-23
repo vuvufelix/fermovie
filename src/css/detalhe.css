@@ -49,3 +49,21 @@
     color: #ee150e;
     font-size: 1.125rem;
 }
+
+@media screen and (max-width: 600px) {
+    #details-container #info-details div .fa-solid {
+        font-size: 0.875rem;
+    }
+    
+    #details-container #info-details strong {
+        font-size: 0.875rem;
+    }
+
+    #details-container #info-details span {
+        font-size: 0.875rem;
+    }
+
+    #details-container #info-details p {
+        font-size: 0.875rem;
+    }
+}

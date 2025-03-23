@@ -16,4 +16,14 @@ main #films-container {
     justify-content: center;
     flex-wrap: wrap;
     margin-top: 10px;
+    width: 100%;
+}
+
+main #resultado-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 10px;
+    width: 100%;
 }

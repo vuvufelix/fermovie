@@ -75,6 +75,22 @@
         right: -31.25rem;
         top: -1.75rem;
     }
+
+    #img-background .btn {
+        width: 170px;
+        display: block;
+        font-weight: 400;
+        font-size: 0.775rem;
+        border-radius: 5px;
+    }
+
+    #details-container #p h2 {
+        font-size: 17px
+    }
+
+    #details-container #p span {
+        font-size: 14px
+    }
 }
 
 @media screen and (max-width: 430px) {

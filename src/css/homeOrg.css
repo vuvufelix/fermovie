@@ -8,6 +8,18 @@ nav {
     margin: 0.625rem 0.625rem 9.375rem 0.625rem;
 }
 
+@media screen and (max-width: 375px) {
+    .film-container {
+        width: calc(100% - 179px)
+    }
+}
+
+@media screen and(max-width: 296px) {
+    .film-container {
+        width: calc(100% - 175px);
+    }
+}
+
 .poster {
     width: 100%;
 }

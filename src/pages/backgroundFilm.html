@@ -37,10 +37,10 @@
             </ul>
         </nav>
 
-        <div id="pesquisa">
+        <form id="pesquisa">
             <input type="text" name="buscar" id="buscar" placeholder="Buscar filme">
-            <button id="buscarDados" onclick="pesquisa()"><i class="fa-solid fa-magnifying-glass"></i></button>
-        </div>
+            <button type="submit" id="buscarDados"><i class="fa-solid fa-magnifying-glass"></i></button>
+        </form>
 
         <a href="perfil.html" target="_parent" id="foto">
             <img src="../img/687837.jpg" alt="foto de perfil">
@@ -65,14 +65,18 @@
     <aside id="img-background">
         <div id="datails-container">
             <h2 id="title"></h2>
-            <a href="#" target="_parent" id="btn-watch" class="btn"><i class="fa-regular fa-circle-play"></i> Assistir</a>
+            <a href="assistir.html" target="_parent" id="btn-watch" class="btn"><i class="fa-regular fa-circle-play"></i> Assistir</a>
             <a href="detalhes.html" target="_parent" id="btn-details" class="btn">Detalhes do filme</a>
         </div>
     </aside>
 
     <main>
-        <h2><strong>Assita estes</strong></h2>
+        <h2><strong id="resposta">Assita estes</strong></h2>
         <div id="films-container">
+            
+        </div>
+
+        <div id="resultado-container">
             
         </div>
     </main>
